@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="Tambola Multiplayer - Classic Housie Game">
+
+  <!-- Mobile -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Tambola Multiplayer">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <title>Tambola Multiplayer</title>
+
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loading {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #333333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="loading">Loading Tambola Multiplayer...</div>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var loading = document.getElementById('loading');
+      if (loading) {
+        loading.remove();
+      }
+    });
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+</body>
+</html>

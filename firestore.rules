@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Rooms collection (Lobby management)
+    match /rooms/{roomId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+    }
+
+    // Game States collection (Authoritative multiplayer state)
+    match /game_states/{roomId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+
+      // Sub-collections (Activity feeds, votes, events)
+      match /{allPaths=**} {
+        allow read, write: if true;
+      }
+    }
+  }
+}
